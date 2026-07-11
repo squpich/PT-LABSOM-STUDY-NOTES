@@ -1,0 +1,2610 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resumo completo para preparação do exame sobre som, perceção auditiva, pós-produção e Reaper.">
+  <meta name="author" content="OpenAI">
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Preparação para o exame — Som e pós-produção áudio</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+
+<body data-app="audio-exam-study" data-page="home">
+  <a class="skip-link" href="#main-content">Ir para o conteúdo principal</a>
+
+  <div class="site-shell" data-layout="study-app">
+    <header class="site-header" data-component="site-header">
+      <div class="site-header__inner">
+        <div class="brand" data-component="brand">
+          <p class="brand__eyebrow">Resumo para o exame</p>
+          <h1 class="brand__title">Som e pós-produção áudio</h1>
+          <p class="brand__subtitle">
+            Material completo de todos os diapositivos enviados: teoria, números, diferenças, regras de trabalho e Reaper.
+          </p>
+        </div>
+
+        <div class="header-actions" data-component="header-actions">
+          <button
+            class="button button--secondary"
+            type="button"
+            data-action="toggle-sidebar"
+            aria-controls="study-sidebar"
+            aria-expanded="false">
+            Índice
+          </button>
+
+          <button
+            class="button button--secondary"
+            type="button"
+            data-action="toggle-theme"
+            aria-pressed="false">
+            Tema
+          </button>
+
+          <button
+            class="button button--primary"
+            type="button"
+            data-action="open-quiz"
+            aria-controls="quiz-panel"
+            aria-expanded="false">
+            Iniciar teste
+          </button>
+        </div>
+      </div>
+
+      <div class="study-progress" data-component="study-progress" aria-label="Progresso de estudo">
+        <div class="study-progress__meta">
+          <span>Secções concluídas</span>
+          <span data-progress-label>0%</span>
+        </div>
+        <progress class="study-progress__bar" max="100" value="0" data-progress-bar>0%</progress>
+      </div>
+    </header>
+
+    <aside
+      class="study-sidebar"
+      id="study-sidebar"
+      data-component="sidebar"
+      aria-label="Navegação pelo resumo">
+
+      <div class="study-sidebar__header">
+        <h2 class="study-sidebar__title">Índice</h2>
+        <button
+          class="icon-button"
+          type="button"
+          data-action="close-sidebar"
+          aria-label="Fechar o índice">
+          ×
+        </button>
+      </div>
+
+      <form class="study-search" role="search" data-component="search-form">
+        <label class="study-search__label" for="study-search-input">Pesquisar no resumo</label>
+        <input
+          class="study-search__input"
+          id="study-search-input"
+          name="query"
+          type="search"
+          placeholder="Por exemplo: headroom, LUFS, Foley"
+          autocomplete="off"
+          data-search-input>
+        <button class="study-search__clear" type="button" data-action="clear-search">Limpar</button>
+      </form>
+
+      <nav class="table-of-contents" aria-label="Secções do curso" data-component="table-of-contents">
+        <ol class="table-of-contents__list">
+          <li><a href="#overview">Visão geral do curso</a></li>
+          <li><a href="#light-temperature">Temperatura de cor</a></li>
+          <li><a href="#sound-basics">Física do som</a></li>
+          <li><a href="#hearing-listening">Ouvir e Escutar</a></li>
+          <li><a href="#listening-modes">Três modos de escuta</a></li>
+          <li><a href="#expressive-value">Sons empáticos e anempáticos</a></li>
+          <li><a href="#sound-properties">Características do som</a></li>
+          <li><a href="#sound-representations">Forma de onda e espectrograma</a></li>
+          <li><a href="#post-production-roles">Funções na pós-produção</a></li>
+          <li><a href="#recording-quality">Qualidade da gravação</a></li>
+          <li><a href="#audio-anomalies">Anomalias sonoras</a></li>
+          <li><a href="#formats-compression">WAV, MP3 e compressão</a></li>
+          <li><a href="#sample-rate">Sample Rate e Nyquist</a></li>
+          <li><a href="#daw">DAW e Reaper</a></li>
+          <li><a href="#decibels">Decibéis</a></li>
+          <li><a href="#working-levels">Níveis de trabalho em dBFS</a></li>
+          <li><a href="#transients-headroom">Transientes e headroom</a></li>
+          <li><a href="#eq">Equalização</a></li>
+          <li><a href="#gate">Gate</a></li>
+          <li><a href="#compression-limiter">Compressor e Limiter</a></li>
+          <li><a href="#saturation-distortion">Saturation e Distortion</a></li>
+          <li><a href="#reverb-delay">Reverb e Delay</a></li>
+          <li><a href="#time-pitch">Time-stretch e Pitch-shifting</a></li>
+          <li><a href="#sound-design">Sound Design</a></li>
+          <li><a href="#loudness-meter">Youlean Loudness Meter</a></li>
+          <li><a href="#signal-chain">Cadeia de processamento</a></li>
+          <li><a href="#plugins">Plugins</a></li>
+          <li><a href="#reaper-shortcuts">Atalhos de teclado do Reaper</a></li>
+          <li><a href="#spectral-analysis-deep">Análise espectral detalhada</a></li>
+          <li><a href="#postproduction-workflow-deep">Workflow completo de pós-produção</a></li>
+          <li><a href="#digital-audio-deep">Áudio digital: análise aprofundada</a></li>
+          <li><a href="#db-deep">dB, dBFS e LUFS: análise aprofundada</a></li>
+          <li><a href="#processors-deep">Processadores de áudio: análise aprofundada</a></li>
+          <li><a href="#reaper-practice">Prática no Reaper</a></li>
+          <li><a href="#exam-scenarios">Situações de exame</a></li>
+          <li><a href="#terminology-glossary">Glossário de termos</a></li>
+          <li><a href="#exam-cheatsheet">Cábula para o exame</a></li>
+          <li><a href="#quiz-panel">Teste de treino</a></li>
+        </ol>
+      </nav>
+    </aside>
+
+    <main class="main-content" id="main-content" tabindex="-1">
+      <section
+        class="hero-section"
+        id="overview"
+        data-section
+        data-section-title="Visão geral do curso">
+        <div class="hero-section__content">
+          <p class="section-kicker">Estrutura completa da matéria</p>
+          <h2 class="hero-section__title">Como está organizado o curso</h2>
+          <p class="hero-section__lead">
+            A matéria evolui de forma sequencial da perceção e da física do som para o áudio
+            digital, a pós-produção, o processamento do sinal e o trabalho prático no Reaper.
+          </p>
+
+          <div class="topic-grid" data-component="topic-grid">
+            <article class="topic-card" data-topic="psychoacoustics">
+              <h3>1. Perceção</h3>
+              <p>Ouvir, Escutar, três modos de escuta, som empático e anempático.</p>
+            </article>
+
+            <article class="topic-card" data-topic="physics">
+              <h3>2. Física do som</h3>
+              <p>Fonte, meio, recetor, amplitude, frequência, timbre e duração.</p>
+            </article>
+
+            <article class="topic-card" data-topic="digital-audio">
+              <h3>3. Áudio digital</h3>
+              <p>WAV, MP3, Sample Rate, Nyquist, dBFS, LUFS, True Peak.</p>
+            </article>
+
+            <article class="topic-card" data-topic="postproduction">
+              <h3>4. Pós-produção</h3>
+              <p>Funções dos especialistas, Reaper, plugins e cadeia final de processamento.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="light-temperature"
+        data-section
+        data-section-title="Temperatura de cor da luz">
+        <header class="section-header">
+          <p class="section-kicker">Diapositivo adicional</p>
+          <h2>Temperatura de cor da luz</h2>
+          <p>A temperatura de cor mede-se em kelvin — K.</p>
+        </header>
+
+        <div class="scale-list" data-component="temperature-scale">
+          <article class="scale-item" data-kelvin="1000">
+            <h3>1000 K</h3>
+            <p>Chama de uma vela.</p>
+          </article>
+          <article class="scale-item" data-kelvin="2000">
+            <h3>2000 K</h3>
+            <p>Pôr do sol ou início do amanhecer.</p>
+          </article>
+          <article class="scale-item" data-kelvin="3000">
+            <h3>3000 K</h3>
+            <p>Lâmpada incandescente e lâmpada de halogéneo.</p>
+          </article>
+          <article class="scale-item" data-kelvin="4000">
+            <h3>4000 K</h3>
+            <p>LED branco quente.</p>
+          </article>
+          <article class="scale-item" data-kelvin="5000">
+            <h3>5000 K</h3>
+            <p>Luz do dia ao meio-dia.</p>
+          </article>
+          <article class="scale-item" data-kelvin="6000">
+            <h3>6000 K</h3>
+            <p>LED branco frio.</p>
+          </article>
+          <article class="scale-item" data-kelvin="7000">
+            <h3>7000 K</h3>
+            <p>Luz do dia nublada.</p>
+          </article>
+          <article class="scale-item" data-kelvin="10000">
+            <h3>10 000 K</h3>
+            <p>Céu azul limpo.</p>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="remember">
+          <h3>Memorizar</h3>
+          <p>Quanto mais baixo for o valor em K, mais quente e avermelhada é visualmente a luz. Quanto mais alto for, mais fria e azulada se torna.</p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="sound-basics"
+        data-section
+        data-section-title="Física do som">
+        <header class="section-header">
+          <p class="section-kicker">Fenómeno Acústico</p>
+          <h2>O que é o som</h2>
+        </header>
+
+        <article class="definition-card" data-term="sound">
+          <h3>Definição física</h3>
+          <p>
+            O som é uma perturbação mecânica e uma rápida variação de pressão que se propaga sob a
+            forma de ondas através de um meio elástico, geralmente o ar.
+          </p>
+        </article>
+
+        <div class="process-flow" data-component="process-flow" aria-label="Fonte, meio e recetor">
+          <article class="process-step" data-step="source">
+            <span class="process-step__number">1</span>
+            <h3>Fonte — source</h3>
+            <p>Qualquer corpo elástico capaz de vibrar e criar uma onda sonora.</p>
+            <p class="examples">Exemplos: cordas vocais, corda, altifalante e membrana de tambor.</p>
+          </article>
+
+          <div class="process-flow__arrow" aria-hidden="true">→</div>
+
+          <article class="process-step" data-step="medium">
+            <span class="process-step__number">2</span>
+            <h3>Meio — medium</h3>
+            <p>Material através do qual a onda se propaga.</p>
+            <p class="examples">Ar, água e corpos sólidos.</p>
+          </article>
+
+          <div class="process-flow__arrow" aria-hidden="true">→</div>
+
+          <article class="process-step" data-step="receiver">
+            <span class="process-step__number">3</span>
+            <h3>Recetor — receiver</h3>
+            <p>Aquilo que recebe a onda sonora.</p>
+            <p class="examples">Ouvido, microfone e sensor.</p>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="formula">
+          <h3>Fórmula curta</h3>
+          <p><strong>Fonte → Meio → Recetor</strong></p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="hearing-listening"
+        data-section
+        data-section-title="Ouvir e Escutar">
+        <header class="section-header">
+          <p class="section-kicker">Perceção sonora</p>
+          <h2>Ouvir vs. Escutar</h2>
+        </header>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="ouvir">
+            <h3>Ouvir — Hearing</h3>
+            <p>Processo fisiológico passivo.</p>
+            <ul>
+              <li>As ondas sonoras chegam ao ouvido.</li>
+              <li>Não exige atenção consciente.</li>
+              <li>É a capacidade física de detetar som.</li>
+              <li>Não exige interpretação.</li>
+            </ul>
+            <p class="summary-line"><strong>Em resumo:</strong> ouvir fisicamente.</p>
+          </article>
+
+          <article class="comparison-card" data-compare="escutar">
+            <h3>Escutar — Listening</h3>
+            <p>Processo ativo e intencional.</p>
+            <ul>
+              <li>Exige atenção.</li>
+              <li>Inclui análise.</li>
+              <li>Inclui interpretação.</li>
+              <li>Atribui significado ao que é ouvido.</li>
+            </ul>
+            <p class="summary-line"><strong>Em resumo:</strong> escutar e compreender.</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="listening-modes"
+        data-section
+        data-section-title="Três modos de escuta">
+        <header class="section-header">
+          <p class="section-kicker">Michel Chion / Pierre Schaeffer</p>
+          <h2>Três modos de escuta</h2>
+        </header>
+
+        <div class="accordion" data-component="accordion" data-accordion-group="listening-modes">
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="true"
+                aria-controls="panel-causal"
+                id="trigger-causal"
+                data-action="toggle-accordion">
+                Escuta Causal — Causal Listening
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="panel-causal"
+              role="region"
+              aria-labelledby="trigger-causal">
+              <p>A atenção dirige-se para a causa ou fonte do som.</p>
+              <ul>
+                <li>O que é?</li>
+                <li>Quem produz o som?</li>
+                <li>De onde vem?</li>
+                <li>O que aconteceu?</li>
+              </ul>
+              <p><strong>Exemplo:</strong> ouve-se um latido → é um cão.</p>
+              <p class="summary-line"><strong>Fórmula:</strong> de onde vem o som e quem ou o que o produz.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="panel-semantic"
+                id="trigger-semantic"
+                data-action="toggle-accordion">
+                Escuta Semântica / Codal — Semantic Listening
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="panel-semantic"
+              role="region"
+              aria-labelledby="trigger-semantic"
+              hidden>
+              <p>O som é entendido como um código ou uma linguagem que transmite uma mensagem.</p>
+              <ul>
+                <li>Fala.</li>
+                <li>Código Morse.</li>
+                <li>Sistemas de sinalização.</li>
+                <li>Códigos sonoros.</li>
+              </ul>
+              <p>
+                Na escuta semântica, o código Morse representa uma mensagem. Na escuta causal, a
+                fonte poderia ser identificada como um telégrafo.
+              </p>
+              <p class="summary-line"><strong>Fórmula:</strong> o que significa o som.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="panel-reduced"
+                id="trigger-reduced"
+                data-action="toggle-accordion">
+                Escuta Reduzida — Reduced Listening
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="panel-reduced"
+              role="region"
+              aria-labelledby="trigger-reduced"
+              hidden>
+              <p>
+                O som é analisado por si próprio, independentemente da fonte, da causa e do significado.
+              </p>
+              <ul>
+                <li>Frequência e altura.</li>
+                <li>Timbre e textura.</li>
+                <li>Amplitude.</li>
+                <li>Ritmo.</li>
+                <li>Espectro.</li>
+                <li>Ataque e ressonância.</li>
+              </ul>
+              <blockquote>
+                Não «é a voz de uma criança», mas sim «o sinal tem demasiadas frequências altas».
+              </blockquote>
+              <p>É utilizada em EQ, compressão, análise espectral e processamento técnico.</p>
+              <p class="summary-line"><strong>Fórmula:</strong> como o sinal soa fisicamente.</p>
+            </div>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="important">
+          <h3>Pergunta muito provável</h3>
+          <p>Qual é a diferença entre causal listening, semantic listening e reduced listening?</p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="expressive-value"
+        data-section
+        data-section-title="Valor expressivo do som">
+        <header class="section-header">
+          <p class="section-kicker">Valor Expressivo do Som</p>
+          <h2>Sons empáticos e anempáticos</h2>
+        </header>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="empathetic">
+            <h3>Sons Empáticos</h3>
+            <p>O som ou a música participa na emoção da cena.</p>
+            <ul>
+              <li>Apoiam o estado psicológico das personagens.</li>
+              <li>Adaptam o ritmo e o tom ao drama.</li>
+              <li>Funcionam como um espelho emocional da imagem.</li>
+              <li>Ajudam o espectador a partilhar os sentimentos da personagem.</li>
+            </ul>
+            <p class="summary-line"><strong>Em resumo:</strong> o som sente o mesmo que a cena.</p>
+          </article>
+
+          <article class="comparison-card" data-compare="anempathetic">
+            <h3>Sons Anempáticos</h3>
+            <p>O som demonstra indiferença perante o drama.</p>
+            <ul>
+              <li>Continua de forma calma e independente.</li>
+              <li>Não reage ao estado psicológico da cena.</li>
+              <li>Pode intensificar a crueldade e a inquietação do momento.</li>
+              <li>Realça a indiferença do mundo.</li>
+            </ul>
+            <p class="summary-line"><strong>Em resumo:</strong> o som ignora o drama e, desse modo, intensifica-o.</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="sound-properties"
+        data-section
+        data-section-title="Características do som">
+        <header class="section-header">
+          <p class="section-kicker">Características Fundamentais do Som</p>
+          <h2>Quatro características fundamentais do som</h2>
+        </header>
+
+        <div class="definition-grid" data-component="definition-grid">
+          <article class="definition-card" data-term="amplitude">
+            <h3>Amplitude / Intensidade</h3>
+            <p>Determina o volume e a intensidade percecionada.</p>
+            <ul>
+              <li>Está relacionada com a energia da onda.</li>
+              <li>Quanto maior for a amplitude, mais alto será o som.</li>
+              <li>O nível é expresso em dB.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="frequency">
+            <h3>Frequência / Altura</h3>
+            <p>Velocidade de vibração que determina a altura do som.</p>
+            <ul>
+              <li>Grave — som baixo.</li>
+              <li>Agudo — som alto.</li>
+              <li>Mede-se em Hz ou kHz.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="timbre">
+            <h3>Timbre</h3>
+            <p>«Cor» ou identidade única do som.</p>
+            <ul>
+              <li>Permite distinguir um piano de uma guitarra.</li>
+              <li>Depende dos harmónicos e da composição espectral.</li>
+              <li>Também está relacionado com o ataque e o decaimento.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="duration">
+            <h3>Duração</h3>
+            <p>Tempo durante o qual o som permanece audível.</p>
+            <ul>
+              <li>Decay — tempo de decaimento.</li>
+              <li>É especialmente percetível em sinos e sons ressonantes.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="sound-representations"
+        data-section
+        data-section-title="Representações do som">
+        <header class="section-header">
+          <p class="section-kicker">Representações do Som</p>
+          <h2>Forma de onda e espectrograma</h2>
+        </header>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="waveform">
+            <h3>Onda Temporal — Waveform</h3>
+            <p>Mostra a variação da amplitude ao longo do tempo.</p>
+            <ul>
+              <li>Picos.</li>
+              <li>Silêncio.</li>
+              <li>Ritmo.</li>
+              <li>Transientes.</li>
+              <li>Duração.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="spectrogram">
+            <h3>Representação Espectral — Spectrogram</h3>
+            <p>Mostra a composição de frequências do som ao longo do tempo.</p>
+            <ul>
+              <li>Timbre.</li>
+              <li>Harmónicos.</li>
+              <li>Ressonâncias.</li>
+              <li>Ruídos.</li>
+              <li>Distribuição da energia por frequências.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="difference">
+          <h3>Diferença principal</h3>
+          <p><strong>Waveform:</strong> amplitude ao longo do tempo. <strong>Spectrogram:</strong> frequências ao longo do tempo.</p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="post-production-roles"
+        data-section
+        data-section-title="Funções na pós-produção">
+        <header class="section-header">
+          <p class="section-kicker">Papéis na pós-produção de som</p>
+          <h2>Funções dos especialistas</h2>
+        </header>
+
+        <div class="role-grid" data-component="role-grid">
+          <article class="role-card" data-role="sound-supervisor">
+            <h3>Supervisor de Som</h3>
+            <ul>
+              <li>Coordena toda a equipa de som.</li>
+              <li>Comunica com o realizador.</li>
+              <li>Define o conceito artístico.</li>
+              <li>Aprova os diálogos e orienta a componente musical.</li>
+            </ul>
+          </article>
+
+          <article class="role-card" data-role="sound-designer">
+            <h3>Designer de Som</h3>
+            <ul>
+              <li>Cria sons que podem não existir.</li>
+              <li>Define a identidade sonora do filme.</li>
+              <li>Trabalha com efeitos fantásticos e expressivos.</li>
+            </ul>
+          </article>
+
+          <article class="role-card" data-role="foley-artist">
+            <h3>Foley Artist</h3>
+            <ul>
+              <li>Recria passos.</li>
+              <li>Grava o movimento da roupa.</li>
+              <li>Trabalha com portas, objetos e impactos.</li>
+            </ul>
+          </article>
+
+          <article class="role-card" data-role="adr-editor">
+            <h3>ADR Editor</h3>
+            <ul>
+              <li>Substitui diálogos mal gravados.</li>
+              <li>Sincroniza a gravação em estúdio com a imagem.</li>
+              <li>Limpa e ajusta as falas.</li>
+            </ul>
+          </article>
+
+          <article class="role-card" data-role="composer">
+            <h3>Compositor</h3>
+            <ul>
+              <li>Compõe a música.</li>
+              <li>Supervisiona a componente musical.</li>
+              <li>Organiza a produção da banda sonora.</li>
+            </ul>
+          </article>
+
+          <article class="role-card" data-role="rerecording-mixer">
+            <h3>Re-recording Mixer</h3>
+            <ul>
+              <li>Combina diálogos, Foley, música e efeitos.</li>
+              <li>Equilibra todos os elementos.</li>
+              <li>Cria a mistura final.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="workflow-diagram" data-component="postproduction-workflow">
+          <h3>Esquema de trabalho</h3>
+          <ol class="workflow-diagram__steps">
+            <li>O Supervisor de Som distribui e supervisiona as tarefas.</li>
+            <li>O Designer, o Foley Artist, o ADR Editor e o Composer criam os materiais.</li>
+            <li>Todos os materiais são entregues ao Re-recording Mixer.</li>
+            <li>Este realiza o Final Mix.</li>
+            <li>O resultado é o Filme Final.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="recording-quality"
+        data-section
+        data-section-title="Qualidade da gravação">
+        <header class="section-header">
+          <p class="section-kicker">Escala de Qualidade Sonora</p>
+          <h2>Três categorias de qualidade áudio</h2>
+        </header>
+
+        <div class="quality-grid" data-component="quality-scale">
+          <article class="quality-card" data-quality="clean">
+            <h3>Clean</h3>
+            <ul>
+              <li>Sem problemas audíveis.</li>
+              <li>Sem ruído de fundo percetível.</li>
+              <li>Sem distorção.</li>
+              <li>A dinâmica está controlada.</li>
+              <li>Pode ser utilizado diretamente na pós-produção.</li>
+            </ul>
+          </article>
+
+          <article class="quality-card" data-quality="colored">
+            <h3>Colored</h3>
+            <ul>
+              <li>A inteligibilidade é preservada.</li>
+              <li>Existe algum ruído ligeiro ou reverberação.</li>
+              <li>Pode existir sibilância moderada.</li>
+              <li>Pode ser corrigido com EQ, Gate e De-esser.</li>
+            </ul>
+          </article>
+
+          <article class="quality-card" data-quality="problematic">
+            <h3>Problematic</h3>
+            <ul>
+              <li>Clipping.</li>
+              <li>Ruído constante intenso.</li>
+              <li>O sinal útil está mascarado.</li>
+              <li>A informação foi destruída.</li>
+              <li>É necessária uma nova gravação.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="warning">
+          <h3>Ideia principal</h3>
+          <p>Nenhum plugin consegue recuperar informação destruída durante a gravação.</p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="audio-anomalies"
+        data-section
+        data-section-title="Anomalias sonoras">
+        <header class="section-header">
+          <p class="section-kicker">Anomalias Sonoras</p>
+          <h2>Cinco problemas principais de áudio</h2>
+        </header>
+
+        <div class="definition-grid" data-component="definition-grid">
+          <article class="definition-card" data-term="background-noise">
+            <h3>Ruído de Fundo</h3>
+            <p>Som indesejado constante por baixo do sinal útil.</p>
+            <ul>
+              <li>Ar condicionado.</li>
+              <li>Zumbido da rede elétrica.</li>
+              <li>Ventoinha do computador.</li>
+              <li>É especialmente audível entre palavras e notas.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="clipping">
+            <h3>Distorção / Clipping</h3>
+            <p>Ocorre quando o sinal digital ultrapassa 0 dBFS.</p>
+            <ul>
+              <li>Os picos da onda são cortados.</li>
+              <li>Os topos ficam planos.</li>
+              <li>Perde-se informação.</li>
+              <li>A distorção é agressiva e irreversível.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="sibilance">
+            <h3>Sibilância</h3>
+            <p>Energia excessiva nas frequências altas, normalmente entre 5 e 10 kHz.</p>
+            <ul>
+              <li>S, Ç e Ch agressivos.</li>
+              <li>Causas: microfone, posição do microfone e compressão.</li>
+              <li>É um excesso numa faixa específica, e não apenas volume excessivo.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="masking">
+            <h3>Mascaramento / Masking</h3>
+            <p>Efeito psicoacústico em que um som mais alto esconde um som mais baixo.</p>
+            <ul>
+              <li>Sobretudo quando as frequências são próximas.</li>
+              <li>Não é uma avaria técnica.</li>
+              <li>Exemplo: tentar conversar junto a um autocarro em movimento.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="compression-artifacts">
+            <h3>Artefactos de Compressão</h3>
+            <p>Efeitos secundários da compressão com perdas em MP3, AAC e OGG.</p>
+            <ul>
+              <li>O algoritmo elimina parte da informação.</li>
+              <li>Com um bitrate baixo, as perdas tornam-se audíveis.</li>
+              <li>Comparação: 16, 32, 64, 128 e 256 kbps.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="formats-compression"
+        data-section
+        data-section-title="WAV, MP3 e compressão">
+        <header class="section-header">
+          <p class="section-kicker">Qualidade e Compressão do Áudio</p>
+          <h2>WAV e MP3</h2>
+        </header>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="wav">
+            <h3>WAV — Lossless</h3>
+            <ul>
+              <li>Exemplo: 48 kHz / 24 bits.</li>
+              <li>Preserva todos os transientes.</li>
+              <li>Preserva toda a imagem estéreo.</li>
+              <li>Preserva as frequências altas até cerca de 20 kHz.</li>
+              <li>Tamanho aproximado de 170 MB/min.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="mp3">
+            <h3>MP3 — 128 kbps</h3>
+            <ul>
+              <li>Compressão psicoacústica com perdas.</li>
+              <li>A imagem estéreo é simplificada.</li>
+              <li>Corte acima de aproximadamente 16 kHz.</li>
+              <li>Tamanho aproximado de 1 MB/min.</li>
+              <li>Cerca de 170 vezes menor do que WAV.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="sample-rate"
+        data-section
+        data-section-title="Sample Rate e Nyquist">
+        <header class="section-header">
+          <p class="section-kicker">Digital Audio</p>
+          <h2>Sample Rate e teorema de Nyquist</h2>
+        </header>
+
+        <article class="definition-card" data-term="sample-rate">
+          <h3>Sample Rate</h3>
+          <p>Número de amostras que o sistema recolhe da onda sonora num segundo.</p>
+          <p>Quanto maior for o número de amostras, mais precisa é a reconstrução da onda original.</p>
+        </article>
+
+        <aside class="exam-note" data-note-type="formula">
+          <h3>Teorema de Nyquist</h3>
+          <p>O Sample Rate deve ser, no mínimo, duas vezes superior à frequência a reproduzir.</p>
+        </aside>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="44100">
+            <h3>44 100 Hz</h3>
+            <p>Norma para música.</p>
+            <ul>
+              <li>Audio CD.</li>
+              <li>Spotify.</li>
+              <li>Apple Music.</li>
+              <li>Produção musical.</li>
+              <li>Máximo segundo Nyquist: 22 050 Hz.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="48000">
+            <h3>48 000 Hz</h3>
+            <p>Norma para vídeo e broadcast.</p>
+            <ul>
+              <li>YouTube.</li>
+              <li>Netflix.</li>
+              <li>Cinema e televisão.</li>
+              <li>Som para vídeo.</li>
+              <li>Máximo segundo Nyquist: 24 000 Hz.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="daw"
+        data-section
+        data-section-title="DAW e Reaper">
+        <header class="section-header">
+          <p class="section-kicker">Digital Audio Workstation</p>
+          <h2>O que permite fazer uma DAW</h2>
+        </header>
+
+        <p class="lead-text">Uma DAW é uma mesa de mistura com memória praticamente infinita e possibilidade de anular ações.</p>
+
+        <div class="feature-grid" data-component="feature-grid">
+          <article class="feature-card" data-feature="record">
+            <h3>Grava</h3>
+            <p>Grava microfones e instrumentos em pistas separadas.</p>
+          </article>
+          <article class="feature-card" data-feature="edit">
+            <h3>Edita</h3>
+            <p>Corta, desloca, duplica e inverte clips de áudio.</p>
+          </article>
+          <article class="feature-card" data-feature="process">
+            <h3>Processa</h3>
+            <p>Aplica EQ, compressão, reverb e outros plugins.</p>
+          </article>
+          <article class="feature-card" data-feature="mix">
+            <h3>Mistura</h3>
+            <p>Controla o volume, a panorâmica e o equilíbrio das pistas.</p>
+          </article>
+          <article class="feature-card" data-feature="export">
+            <h3>Exporta</h3>
+            <p>Cria o ficheiro final em WAV, MP3 e outros formatos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="decibels"
+        data-section
+        data-section-title="Decibéis">
+        <header class="section-header">
+          <p class="section-kicker">A Escala Logarítmica do dB</p>
+          <h2>Escala logarítmica dos decibéis</h2>
+        </header>
+
+        <p>
+          A escala de dB é logarítmica. É adequada a uma enorme gama de níveis e corresponde
+          bem à forma como o ouvido humano perceciona o volume.
+        </p>
+
+        <div class="formula-block" data-component="formula">
+          <p class="formula-block__label">Fórmula da relação de amplitudes</p>
+          <p class="formula-block__value">dB = 20 × log₁₀(A₂ / A₁)</p>
+        </div>
+
+        <div class="responsive-table" data-component="table-wrapper">
+          <table class="study-table">
+            <caption>Relação entre amplitude, dB e perceção</caption>
+            <thead>
+              <tr>
+                <th scope="col">Alteração da amplitude</th>
+                <th scope="col">Alteração em dB</th>
+                <th scope="col">Perceção</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>×1</td><td>0 dB</td><td>Sem alteração</td></tr>
+              <tr><td>×1,12</td><td>+1 dB</td><td>Limiar de alteração percetível</td></tr>
+              <tr><td>×2</td><td>+6 dB</td><td>Ligeiramente mais alto</td></tr>
+              <tr><td>×3,16</td><td>+10 dB</td><td>Subjetivamente, aproximadamente duas vezes mais alto</td></tr>
+              <tr><td>×10</td><td>+20 dB</td><td>Consideravelmente mais alto</td></tr>
+              <tr><td>×100</td><td>+40 dB</td><td>Diferença muito grande</td></tr>
+              <tr><td>×1000</td><td>+60 dB</td><td>Diferença enorme</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="definition-grid" data-component="definition-grid">
+          <article class="definition-card" data-term="db-spl">
+            <h3>dB SPL</h3>
+            <p>Pressão sonora física no ar.</p>
+            <p>É utilizada para microfones, espaços e acústica.</p>
+          </article>
+
+          <article class="definition-card" data-term="dbfs">
+            <h3>dBFS</h3>
+            <p>Nível digital dentro da DAW.</p>
+            <p>0 dBFS é o máximo digital absoluto.</p>
+          </article>
+
+          <article class="definition-card" data-term="relative-db">
+            <h3>dB relativo</h3>
+            <p>Diferença entre dois valores sem um zero fixo.</p>
+            <p>Exemplos: +6 dB no fader ou −3 dB no EQ.</p>
+          </article>
+
+          <article class="definition-card" data-term="lufs">
+            <h3>LUFS</h3>
+            <p>Volume médio percecionado ao longo do tempo.</p>
+            <p>Valores de referência: −23 LUFS em broadcast e −14 LUFS no Spotify/YouTube.</p>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="warning">
+          <h3>Não confundir</h3>
+          <p>dB SPL e dBFS não podem ser convertidos diretamente um no outro. Medem grandezas diferentes.</p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="working-levels"
+        data-section
+        data-section-title="Níveis de trabalho em dBFS">
+        <header class="section-header">
+          <p class="section-kicker">Zonas de Trabalho em dBFS</p>
+          <h2>Zonas de trabalho do nível digital</h2>
+        </header>
+
+        <div class="level-scale" data-component="dbfs-scale">
+          <article class="level-zone" data-zone="clipping">
+            <h3>Clipping</h3>
+            <p><strong>0 dBFS e acima</strong></p>
+            <p>A informação é destruída. Isto não deve acontecer.</p>
+          </article>
+
+          <article class="level-zone" data-zone="risk">
+            <h3>Zona de Risco</h3>
+            <p><strong>−6…0 dBFS</strong></p>
+            <p>Headroom mínimo. Qualquer pico adicional pode provocar clipping.</p>
+          </article>
+
+          <article class="level-zone" data-zone="work">
+            <h3>Zona de Trabalho</h3>
+            <p><strong>−18…−12 dBFS</strong></p>
+            <p>Zona ideal para gravação, mistura e funcionamento dos plugins.</p>
+          </article>
+
+          <article class="level-zone" data-zone="weak">
+            <h3>Sinal Fraco</h3>
+            <p><strong>abaixo de −24 dBFS</strong></p>
+            <p>O sinal é demasiado fraco e o ruído de fundo torna-se percetível.</p>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="numbers">
+          <h3>Regra para um projeto audiovisual</h3>
+          <ul>
+            <li>Diálogo / voz: −18…−12 dBFS.</li>
+            <li>Ambiente / fundo: −30…−20 dBFS.</li>
+            <li>Não ultrapassar −6 dBFS nas pistas individuais.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="transients-headroom"
+        data-section
+        data-section-title="Transientes e headroom">
+        <header class="section-header">
+          <p class="section-kicker">Transientes / Headroom</p>
+          <h2>Porque é necessário ter margem de nível</h2>
+        </header>
+
+        <article class="definition-card" data-term="transient">
+          <h3>Transient</h3>
+          <p>Primeiro impulso do som, muito curto e frequentemente o mais alto.</p>
+          <ul>
+            <li>Dura milissegundos.</li>
+            <li>É a causa mais frequente de clipping.</li>
+            <li>Depois surgem o sustain e o decay.</li>
+            <li>Exemplos: passo, porta, tambor e estalar de dedos.</li>
+          </ul>
+        </article>
+
+        <article class="definition-card" data-term="headroom">
+          <h3>Headroom</h3>
+          <p>Margem entre o nível atual do sinal e o limite de 0 dBFS.</p>
+          <p>É necessária para que picos inesperados não provoquem clipping.</p>
+        </article>
+
+        <aside class="exam-note" data-note-type="example">
+          <h3>Exemplo</h3>
+          <p>O sinal encontra-se normalmente a −12 dBFS, mas um pico repentino sobe até −4 dBFS. O headroom permite que passe sem clipping.</p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="eq"
+        data-section
+        data-section-title="Equalização">
+        <header class="section-header">
+          <p class="section-kicker">Equalização</p>
+          <h2>Regra principal do EQ</h2>
+        </header>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="cut-narrow">
+            <h3>Cut Narrow</h3>
+            <p>Para remover um problema, utiliza-se um Q elevado e uma curva estreita.</p>
+            <ul>
+              <li>Q aproximadamente entre 5 e 20.</li>
+              <li>Remove ressonância, zumbido e feedback.</li>
+              <li>Função corretiva.</li>
+              <li>Resultado: som limpo e preciso.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="boost-wide">
+            <h3>Boost Wide</h3>
+            <p>Para um reforço musical, utiliza-se um Q baixo e uma curva larga.</p>
+            <ul>
+              <li>Q aproximadamente entre 0,5 e 2.</li>
+              <li>Acrescenta brilho, corpo e presença.</li>
+              <li>Função musical.</li>
+              <li>Resultado: som suave, natural e encorpado.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="gate"
+        data-section
+        data-section-title="Gate">
+        <header class="section-header">
+          <p class="section-kicker">Noise Gate</p>
+          <h2>Gate e respetivos parâmetros</h2>
+        </header>
+
+        <p>
+          O Gate fecha automaticamente o sinal quando o nível desce abaixo do Threshold definido. É
+          utilizado para limpar as pausas de ruído de fundo constante.
+        </p>
+
+        <div class="parameter-grid" data-component="parameter-grid">
+          <article class="parameter-card" data-parameter="threshold">
+            <h3>Threshold</h3>
+            <p>Nível acima do qual o Gate abre.</p>
+            <p>Abaixo do limiar, o som é silenciado.</p>
+          </article>
+
+          <article class="parameter-card" data-parameter="attack">
+            <h3>Attack</h3>
+            <p>Tempo que o Gate demora a abrir depois de aparecer o sinal.</p>
+            <p>Um Attack demasiado lento pode cortar o início de uma palavra.</p>
+          </article>
+
+          <article class="parameter-card" data-parameter="release">
+            <h3>Release</h3>
+            <p>Tempo que o Gate demora a fechar depois de o sinal descer.</p>
+            <p>Um Release demasiado curto cria um corte brusco.</p>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="settings">
+          <h3>Configuração do TAL-Filter para voz</h3>
+          <ul>
+            <li>Attack: 5–10 ms.</li>
+            <li>Release: 50–100 ms.</li>
+            <li>Baixa-se o Threshold até o Gate fechar apenas nas pausas.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="compression-limiter"
+        data-section
+        data-section-title="Compressor e Limiter">
+        <header class="section-header">
+          <p class="section-kicker">Dynamic Processing</p>
+          <h2>Compressor e Limiter</h2>
+        </header>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="compressor">
+            <h3>Compressor</h3>
+            <ul>
+              <li>Controla a gama dinâmica.</li>
+              <li>Reduz a diferença entre as partes mais baixas e mais altas.</li>
+              <li>Torna o sinal mais estável e uniforme.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="limiter">
+            <h3>Limiter</h3>
+            <ul>
+              <li>Protege o nível máximo.</li>
+              <li>Não deixa o sinal ultrapassar o Threshold.</li>
+              <li>É, na prática, um compressor com um ratio muito elevado ou infinito.</li>
+              <li>Última proteção antes da exportação.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="saturation-distortion"
+        data-section
+        data-section-title="Saturation e Distortion">
+        <header class="section-header">
+          <p class="section-kicker">Saturação vs. Distorção</p>
+          <h2>Saturação suave e distorção agressiva</h2>
+        </header>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="saturation">
+            <h3>Saturation</h3>
+            <ul>
+              <li>Saturação suave e progressiva.</li>
+              <li>Comprime os topos da onda.</li>
+              <li>Acrescenta sobretudo harmónicos pares.</li>
+              <li>Soa quente, encorpado e vintage.</li>
+              <li>Está associada a fita, válvulas e transformadores.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="distortion">
+            <h3>Distortion</h3>
+            <ul>
+              <li>Corta os topos de forma agressiva.</li>
+              <li>Acrescenta sobretudo harmónicos ímpares.</li>
+              <li>Soa sujo, duro e industrial.</li>
+              <li>É utilizada em guitarras, horror e sound design.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="difference">
+          <h3>Clipping analógico e digital</h3>
+          <p>O clipping analógico pode ser musical e progressivo. O clipping digital a 0 dBFS é duro, irreversível e indesejável.</p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="reverb-delay"
+        data-section
+        data-section-title="Reverb e Delay">
+        <header class="section-header">
+          <p class="section-kicker">Spatial Processing</p>
+          <h2>Espaço e repetições</h2>
+        </header>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="reverb">
+            <h3>Reverb</h3>
+            <ul>
+              <li>Cria a sensação de um espaço acústico.</li>
+              <li>Simula reflexões numa sala, num auditório ou numa câmara.</li>
+              <li>Coloca o som num ambiente real ou imaginário.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="delay">
+            <h3>Delay</h3>
+            <ul>
+              <li>Repete o sinal após um intervalo definido.</li>
+              <li>Cria eco e profundidade temporal.</li>
+              <li>Pode ser um slapback curto ou um eco rítmico.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="time-pitch"
+        data-section
+        data-section-title="Time-stretch e Pitch-shifting">
+        <header class="section-header">
+          <p class="section-kicker">Duração e Altura</p>
+          <h2>Time-stretch e Pitch-shifting</h2>
+        </header>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="time-stretch">
+            <h3>Time-stretch</h3>
+            <p>Altera a duração sem alterar a altura.</p>
+            <ul>
+              <li>10 segundos podem ser estendidos para 12 segundos.</li>
+              <li>É utilizado para sincronização com vídeo.</li>
+              <li>No Reaper: Alt + arrastar a extremidade do clip.</li>
+              <li>Através de F2, pode alterar-se o Playback Rate.</li>
+              <li>Preserve Pitch mantém a altura.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="pitch-shift">
+            <h3>Pitch-shifting</h3>
+            <p>Altera a altura sem alterar a duração.</p>
+            <ul>
+              <li>Um valor positivo torna o som mais agudo.</li>
+              <li>Um valor negativo torna o som mais grave.</li>
+              <li>+12 semitones — uma oitava acima.</li>
+              <li>−12 semitones — uma oitava abaixo.</li>
+              <li>No Reaper: F2 ou ReaPitch.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="difference">
+          <h3>Diferença essencial</h3>
+          <p>O time-stretch altera a duração. O pitch-shifting altera a altura. São operações independentes.</p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="sound-design"
+        data-section
+        data-section-title="Sound Design">
+        <header class="section-header">
+          <p class="section-kicker">Realista e Expressivo</p>
+          <h2>Duas abordagens ao sound design</h2>
+        </header>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="realistic-sound-design">
+            <h3>Realista</h3>
+            <ul>
+              <li>Imita a realidade de forma convincente.</li>
+              <li>Passos, portas, objetos e veículos.</li>
+              <li>É frequentemente gravado separadamente do som de rodagem.</li>
+              <li>O objetivo é fazer o espectador acreditar.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="expressive-sound-design">
+            <h3>Expressivo</h3>
+            <ul>
+              <li>Transmite emoção ou significado.</li>
+              <li>Não tem de ser realista.</li>
+              <li>Sci-fi, fantasy, horror e som abstrato.</li>
+              <li>Monstros, portais e naves espaciais.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="loudness-meter"
+        data-section
+        data-section-title="Youlean Loudness Meter">
+        <header class="section-header">
+          <p class="section-kicker">Loudness Monitoring</p>
+          <h2>Youlean Loudness Meter</h2>
+          <p>O plugin deve ser colocado no Master antes da exportação.</p>
+        </header>
+
+        <div class="metric-grid" data-component="metric-grid">
+          <article class="metric-card" data-metric="short-term-lufs">
+            <h3>Short-Term LUFS</h3>
+            <p>Volume médio dos últimos 3 segundos.</p>
+            <p>É útil para monitorização durante a mistura.</p>
+          </article>
+
+          <article class="metric-card" data-metric="integrated-lufs">
+            <h3>Integrated LUFS</h3>
+            <p>Volume médio de todo o programa ou sessão.</p>
+            <p>É utilizado para a entrega final.</p>
+          </article>
+
+          <article class="metric-card" data-metric="true-peak">
+            <h3>True Peak</h3>
+            <p>Pico real após a conversão.</p>
+            <p>Recomenda-se mantê-lo abaixo de −1 dBTP.</p>
+          </article>
+
+          <article class="metric-card" data-metric="lra">
+            <h3>LRA</h3>
+            <p>Loudness Range — variação dinâmica de toda a sessão.</p>
+            <p>Mostra a diferença entre as partes mais baixas e mais altas.</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="signal-chain"
+        data-section
+        data-section-title="Cadeia de processamento">
+        <header class="section-header">
+          <p class="section-kicker">Processadores de Áudio</p>
+          <h2>Cadeia de processamento típica</h2>
+        </header>
+
+        <ol class="signal-chain" data-component="signal-chain">
+          <li class="signal-chain__item" data-processor="signal">Signal</li>
+          <li class="signal-chain__item" data-processor="eq">EQ</li>
+          <li class="signal-chain__item" data-processor="compressor">Compressor</li>
+          <li class="signal-chain__item" data-processor="saturation">Saturation</li>
+          <li class="signal-chain__item" data-processor="reverb-delay">Reverb / Delay</li>
+          <li class="signal-chain__item" data-processor="limiter">Limiter</li>
+          <li class="signal-chain__item" data-processor="delivery">Delivery</li>
+        </ol>
+
+        <p>
+          O Gate pode ser colocado mais cedo, sobretudo em pistas de voz. Nem todos os sinais têm de
+          passar por todos os processadores — a cadeia depende da tarefa.
+        </p>
+      </section>
+
+      <section
+        class="study-section"
+        id="plugins"
+        data-section
+        data-section-title="Plugins">
+        <header class="section-header">
+          <p class="section-kicker">FabFilter e alternativas gratuitas</p>
+          <h2>Plugins por função</h2>
+        </header>
+
+        <div class="responsive-table" data-component="table-wrapper">
+          <table class="study-table">
+            <caption>Plugins pagos e gratuitos</caption>
+            <thead>
+              <tr>
+                <th scope="col">Função</th>
+                <th scope="col">FabFilter / pago</th>
+                <th scope="col">Alternativa gratuita</th>
+                <th scope="col">Tarefa prática</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>EQ</td><td>Pro-Q 3</td><td>TDR Nova</td><td>Modelação do timbre e remoção de frequências</td></tr>
+              <tr><td>Compressor</td><td>Pro-C 2</td><td>TDR Kotelnikov</td><td>Controlo da dinâmica</td></tr>
+              <tr><td>Limiter + Meter</td><td>Pro-L 2</td><td>LoudMax + Youlean</td><td>Proteção dos picos e controlo de loudness</td></tr>
+              <tr><td>Gate</td><td>Pro-G</td><td>TAL-Filter</td><td>Limpeza do ruído de fundo nas pausas</td></tr>
+              <tr><td>Saturation</td><td>Saturn 2</td><td>IVGI2</td><td>Adição de harmónicos e calor</td></tr>
+              <tr><td>Reverb</td><td>Pro-R</td><td>OrilRiver</td><td>Criação de espaço acústico</td></tr>
+              <tr><td>Delay</td><td>Timeless 3</td><td>ReaDelay / Deelay</td><td>Eco e profundidade temporal</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="reaper-shortcuts"
+        data-section
+        data-section-title="Atalhos de teclado do Reaper">
+        <header class="section-header">
+          <p class="section-kicker">Atalhos Essenciais do Reaper</p>
+          <h2>Atalhos de teclado principais</h2>
+        </header>
+
+        <div class="shortcut-grid" data-component="shortcut-grid">
+          <article class="shortcut-card"><kbd>Space</kbd><p>Play / Stop</p></article>
+          <article class="shortcut-card"><kbd>S</kbd><p>Split — cortar o clip</p></article>
+          <article class="shortcut-card"><kbd>M</kbd><p>Adicionar Marker</p></article>
+          <article class="shortcut-card"><kbd>Ctrl + Z</kbd><p>Undo</p></article>
+          <article class="shortcut-card"><kbd>Ctrl + S</kbd><p>Guardar o projeto</p></article>
+          <article class="shortcut-card"><kbd>Ctrl + Alt + R</kbd><p>Render / exportação</p></article>
+          <article class="shortcut-card"><kbd>Solo</kbd><p>Ouvir apenas a pista selecionada</p></article>
+          <article class="shortcut-card"><kbd>Mute</kbd><p>Silenciar a pista</p></article>
+        </div>
+
+        <article class="definition-card" data-term="envelopes">
+          <h3>Envelopes</h3>
+          <ul>
+            <li><strong>Volume:</strong> fade in, fade out, ducking.</li>
+            <li><strong>Pan:</strong> movimento entre o canal esquerdo e o direito.</li>
+            <li><strong>Shift + Click:</strong> eliminar o ponto.</li>
+            <li><strong>Bezier:</strong> tornar a transição suave.</li>
+          </ul>
+        </article>
+      </section>
+
+
+      <section
+        class="study-section"
+        id="spectral-analysis-deep"
+        data-section
+        data-section-title="Análise espectral detalhada">
+        <header class="section-header">
+          <p class="section-kicker">Escuta Reduzida aplicada</p>
+          <h2>Análise espectral detalhada do som</h2>
+          <p>
+            Esta secção desenvolve a ideia de reduced listening e mostra como descrever tecnicamente um
+            som sem identificar a sua fonte.
+          </p>
+        </header>
+
+        <article class="definition-card" data-term="technical-description">
+          <h3>Como é uma descrição técnica</h3>
+          <p>
+            Numa análise técnica, o som é descrito através de propriedades mensuráveis ou
+            percetíveis: ataque, espectro, distribuição de energia, ressonância, decaimento e estrutura temporal.
+          </p>
+          <p>
+            Em vez da frase «é um objeto metálico», utiliza-se a formulação: «o
+            som tem um ataque curto e de banda larga, perde rapidamente energia nas frequências altas,
+            mas mantém uma ressonância estreita e prolongada».
+          </p>
+        </article>
+
+        <div class="definition-grid" data-component="definition-grid">
+          <article class="definition-card" data-term="attack">
+            <h3>Attack — ataque</h3>
+            <p>O início do som, que contém frequentemente muita energia de banda larga.</p>
+            <ul>
+              <li>Ajuda a identificar a forma como o som foi produzido.</li>
+              <li>Pode ser abrupto ou suave.</li>
+              <li>Contém frequentemente um transiente.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="resonance">
+            <h3>Resonance — ressonância</h3>
+            <p>Concentração estável de energia em torno de uma determinada frequência.</p>
+            <ul>
+              <li>Pode soar como um toque, um zumbido ou uma «nota» do objeto.</li>
+              <li>No espectro, aparece como um pico pronunciado.</li>
+              <li>No exemplo da aula, o pico dominante encontrava-se perto de 1,6 kHz.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="high-frequency-sheen">
+            <h3>Brilho de altas frequências</h3>
+            <p>Energia de curta duração na zona superior do espectro, especialmente percetível no início do som.</p>
+            <ul>
+              <li>Pode desaparecer mais depressa do que a ressonância principal.</li>
+              <li>Cria uma sensação de brilho e nitidez.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="decay-analysis">
+            <h3>Decay — decaimento</h3>
+            <p>Alteração da energia após o ataque.</p>
+            <ul>
+              <li>Um decaimento rápido torna o som curto e seco.</li>
+              <li>Um decaimento lento cria uma sensação de ressonância e espaço.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="important">
+          <h3>Frase que resume a lógica do curso</h3>
+          <p><strong>A análise é meramente técnica</strong> — a análise é exclusivamente técnica.</p>
+        </aside>
+
+        <div class="responsive-table" data-component="table-wrapper">
+          <table class="study-table">
+            <caption>Como distinguir os três modos de escuta num único exemplo</caption>
+            <thead>
+              <tr>
+                <th scope="col">Modo</th>
+                <th scope="col">Foco da atenção</th>
+                <th scope="col">Exemplo de resposta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Causal</td>
+                <td>Fonte e causa</td>
+                <td>«É um objeto metálico»</td>
+              </tr>
+              <tr>
+                <td>Semantic</td>
+                <td>Significado da mensagem</td>
+                <td>«Este sinal significa aviso»</td>
+              </tr>
+              <tr>
+                <td>Reduced</td>
+                <td>Propriedades do sinal</td>
+                <td>«Ataque abrupto, pico perto de 1,6 kHz e ressonância prolongada»</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="postproduction-workflow-deep"
+        data-section
+        data-section-title="Workflow completo de pós-produção">
+        <header class="section-header">
+          <p class="section-kicker">Workflow completo</p>
+          <h2>Workflow completo de pós-produção sonora</h2>
+          <p>
+            Neste esquema, é importante compreender não só as diferentes profissões, mas também a passagem de
+            materiais de um especialista para outro.
+          </p>
+        </header>
+
+        <ol class="workflow-diagram__steps">
+          <li>
+            <strong>Supervisor de Som</strong> discute com o realizador o conceito artístico: como deve
+            ser o mundo do filme e até que ponto o som será realista ou expressivo.
+          </li>
+          <li>
+            <strong>Designer de Som</strong> cria a identidade sonora, efeitos fantásticos,
+            mecanismos invulgares, monstros, portais e outros sons inventados.
+          </li>
+          <li>
+            <strong>Foley Artist</strong> grava ações físicas sincronizadas: passos,
+            roupa, impactos, portas, objetos e superfícies.
+          </li>
+          <li>
+            <strong>ADR Editor</strong> substitui falas de má qualidade,
+            sincroniza a voz gravada em estúdio com a imagem e prepara diálogos limpos.
+          </li>
+          <li>
+            <strong>Compositor</strong> compõe e supervisiona a componente musical.
+          </li>
+          <li>
+            <strong>Re-recording Mixer</strong> recebe todos os grupos de
+            materiais e equilibra diálogos, música, Foley, efeitos e ambientes.
+          </li>
+          <li>
+            É criado<strong>Final Mix</strong>, que passa a integrar o filme final.
+          </li>
+        </ol>
+
+        <div class="role-grid" data-component="role-grid">
+          <article class="role-card" data-role="dialogue-department">
+            <h3>Material de diálogo</h3>
+            <ul>
+              <li>Som original de rodagem.</li>
+              <li>ADR.</li>
+              <li>Limpeza da voz.</li>
+              <li>Sincronização.</li>
+              <li>Controlo da inteligibilidade.</li>
+            </ul>
+          </article>
+
+          <article class="role-card" data-role="effects-department">
+            <h3>Efeitos</h3>
+            <ul>
+              <li>Foley.</li>
+              <li>Hard effects.</li>
+              <li>Designed effects.</li>
+              <li>Ambientes.</li>
+              <li>Transições e acentos.</li>
+            </ul>
+          </article>
+
+          <article class="role-card" data-role="music-department">
+            <h3>Música</h3>
+            <ul>
+              <li>Score original.</li>
+              <li>Composições licenciadas.</li>
+              <li>Stems musicais.</li>
+              <li>Utilização empática ou anempática.</li>
+            </ul>
+          </article>
+
+          <article class="role-card" data-role="final-mix-department">
+            <h3>Final Mix</h3>
+            <ul>
+              <li>Equilíbrio de todos os elementos.</li>
+              <li>Panorâmica.</li>
+              <li>Dinâmica.</li>
+              <li>Espaço.</li>
+              <li>Preparação para o formato de entrega.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="important">
+          <h3>Não confundir</h3>
+          <p>
+            O Sound Designer imagina e define a linguagem
+            sonora. O Foley Artist reproduz ações físicas concretas. O
+            Re-recording Mixer reúne os materiais prontos na mistura final.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="digital-audio-deep"
+        data-section
+        data-section-title="Áudio digital: análise aprofundada">
+        <header class="section-header">
+          <p class="section-kicker">Digitalização e formatos</p>
+          <h2>Áudio digital: análise aprofundada</h2>
+        </header>
+
+        <article class="definition-card" data-term="sampling-analogy">
+          <h3>Analogia com fotografias</h3>
+          <p>
+            O Sample Rate pode ser entendido como o número de fotografias da onda por
+            segundo. Quanto mais frequentemente o sistema efetua uma medição, menores são os intervalos entre as
+            amostras e mais precisa é a reconstrução digital.
+          </p>
+        </article>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="low-sample-rate">
+            <h3>Sample Rate baixo</h3>
+            <ul>
+              <li>Existem grandes intervalos entre as amostras.</li>
+              <li>As frequências altas não são descritas com precisão suficiente.</li>
+              <li>Pode ocorrer aliasing.</li>
+              <li>A forma da onda reconstruída fica distorcida.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="high-sample-rate">
+            <h3>Sample Rate alto</h3>
+            <ul>
+              <li>As amostras estão mais próximas umas das outras.</li>
+              <li>A onda é reconstruída com maior precisão.</li>
+              <li>Fica disponível uma gama de frequências mais ampla.</li>
+              <li>O tamanho do ficheiro e a carga de processamento podem aumentar.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="formula">
+          <h3>Nyquist numa frase</h3>
+          <p>
+            Para gravar uma frequência X, o Sample Rate deve ser, no
+            mínimo, 2X. Por isso, 44,1 kHz permite representar frequências até aproximadamente 22,05 kHz.
+          </p>
+        </aside>
+
+        <div class="responsive-table" data-component="table-wrapper">
+          <table class="study-table">
+            <caption>44,1 kHz e 48 kHz</caption>
+            <thead>
+              <tr>
+                <th scope="col">Parâmetro</th>
+                <th scope="col">44,1 kHz</th>
+                <th scope="col">48 kHz</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Área principal</td>
+                <td>Música</td>
+                <td>Vídeo e broadcast</td>
+              </tr>
+              <tr>
+                <td>Exemplos</td>
+                <td>CD, Spotify, Apple Music</td>
+                <td>YouTube, Netflix, cinema e televisão</td>
+              </tr>
+              <tr>
+                <td>Limite de Nyquist</td>
+                <td>22 050 Hz</td>
+                <td>24 000 Hz</td>
+              </tr>
+              <tr>
+                <td>Aplicação no curso</td>
+                <td>Norma musical</td>
+                <td>Configuração do projeto Reaper para vídeo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <article class="definition-card" data-term="lossy-compression">
+          <h3>O que faz a compressão com perdas</h3>
+          <p>
+            MP3, AAC e OGG utilizam um modelo psicoacústico.
+            O algoritmo tenta remover informação que, em princípio, não será notada pelo ouvinte.
+          </p>
+          <ul>
+            <li>Com um bitrate elevado, o resultado pode ser aceitável.</li>
+            <li>Com um bitrate baixo, surgem artefactos audíveis.</li>
+            <li>A imagem estéreo pode piorar.</li>
+            <li>Parte do espectro de altas frequências pode desaparecer.</li>
+            <li>Os transientes tornam-se menos precisos.</li>
+          </ul>
+        </article>
+
+        <div class="responsive-table" data-component="table-wrapper">
+          <table class="study-table">
+            <caption>Como interpretar o bitrate</caption>
+            <thead>
+              <tr>
+                <th scope="col">Bitrate</th>
+                <th scope="col">Qualidade esperada</th>
+                <th scope="col">O que pode ser audível</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>16 kbps</td>
+                <td>Extremamente baixa</td>
+                <td>Destruição acentuada do espectro e artefactos metálicos</td>
+              </tr>
+              <tr>
+                <td>32 kbps</td>
+                <td>Muito baixa</td>
+                <td>Som desfocado e frequências altas instáveis</td>
+              </tr>
+              <tr>
+                <td>64 kbps</td>
+                <td>Baixa</td>
+                <td>Os artefactos já são percetíveis</td>
+              </tr>
+              <tr>
+                <td>128 kbps</td>
+                <td>Média</td>
+                <td>Compromisso entre tamanho e qualidade</td>
+              </tr>
+              <tr>
+                <td>256 kbps</td>
+                <td>Alta para um formato com perdas</td>
+                <td>Os artefactos são muito menos percetíveis</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="exam-note" data-note-type="warning">
+          <h3>Importante segundo o material do professor</h3>
+          <p>
+            Nos diapositivos, o WAV é indicado como ocupando aproximadamente 170 MB/min
+            e o MP3 a 128 kbps como aproximadamente
+            1 MB/min. Para o exame, devem seguir-se as formulações do curso.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="db-deep"
+        data-section
+        data-section-title="dB, dBFS e LUFS: análise aprofundada">
+        <header class="section-header">
+          <p class="section-kicker">Níveis e loudness</p>
+          <h2>dB, dBFS e LUFS: análise aprofundada</h2>
+        </header>
+
+        <article class="definition-card" data-term="logarithmic-reason">
+          <h3>Porque é que a escala é logarítmica</h3>
+          <p>
+            A gama física das amplitudes sonoras é extremamente ampla.
+            Numa escala linear, seria necessário trabalhar com valores que chegam aos milhões,
+            enquanto uma escala logarítmica permite representar a gama aproximadamente entre 0 e 130 dB.
+          </p>
+          <p>
+            A audição também não reage de forma linear: alterações relativas iguais são percecionadas
+            de modo mais natural do que incrementos absolutos iguais.
+          </p>
+        </article>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="amplitude-doubling">
+            <h3>Duplicação da amplitude</h3>
+            <p><strong>×2 = +6 dB</strong></p>
+            <p>É uma relação matemática entre amplitudes.</p>
+          </article>
+
+          <article class="comparison-card" data-compare="perceived-doubling">
+            <h3>Duplicação subjetiva do volume</h3>
+            <p><strong>aproximadamente +10 dB</strong></p>
+            <p>É uma sensação psicoacústica, e não uma duplicação da amplitude.</p>
+          </article>
+        </div>
+
+        <div class="definition-grid" data-component="definition-grid">
+          <article class="definition-card" data-term="dbspl-deep">
+            <h3>dB SPL</h3>
+            <p>Nível físico da pressão sonora no ar.</p>
+            <p>Aplica-se ao ambiente acústico real e é medido com um microfone ou sonómetro.</p>
+          </article>
+
+          <article class="definition-card" data-term="dbfs-deep">
+            <h3>dBFS</h3>
+            <p>Nível dentro do sistema digital.</p>
+            <p>0 dBFS é o teto absoluto e −∞ dBFS corresponde ao silêncio digital.</p>
+          </article>
+
+          <article class="definition-card" data-term="relative-db-deep">
+            <h3>Relative dB</h3>
+            <p>Alteração relativa.</p>
+            <p>Exemplo: aumentar o fader em +6 dB ou aplicar um cut de −3 dB no EQ.</p>
+          </article>
+
+          <article class="definition-card" data-term="lufs-deep">
+            <h3>LUFS</h3>
+            <p>Indicador do volume percecionado ao longo do tempo.</p>
+            <p>É utilizado para uniformizar o volume entre programas e plataformas.</p>
+          </article>
+        </div>
+
+        <aside class="exam-note" data-note-type="warning">
+          <h3>Porque não é possível converter dB SPL em dBFS com uma única fórmula</h3>
+          <p>
+            O valor digital depende da sensibilidade do microfone, do pré-amplificador, da interface
+            de áudio e do gain definido.
+            Por isso, a mesma pressão acústica pode produzir valores diferentes em dBFS.
+          </p>
+        </aside>
+
+        <div class="responsive-table" data-component="table-wrapper">
+          <table class="study-table">
+            <caption>Escala prática de dBFS</caption>
+            <thead>
+              <tr>
+                <th scope="col">Zona</th>
+                <th scope="col">Intervalo</th>
+                <th scope="col">Significado prático</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Clipping</td>
+                <td>0 dBFS e acima</td>
+                <td>Perda de informação</td>
+              </tr>
+              <tr>
+                <td>Zona de risco</td>
+                <td>−6…0 dBFS</td>
+                <td>Quase sem headroom</td>
+              </tr>
+              <tr>
+                <td>Zona de trabalho</td>
+                <td>−18…−12 dBFS</td>
+                <td>Ideal para gravação e mistura</td>
+              </tr>
+              <tr>
+                <td>Sinal fraco</td>
+                <td>abaixo de −24 dBFS</td>
+                <td>O ruído torna-se mais percetível</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <article class="definition-card" data-term="true-peak-deep">
+          <h3>True Peak e inter-sample peaks</h3>
+          <p>
+            O True Peak estima o possível pico real após a conversão digital-analógica.
+            Pode ficar acima do sample peak normal.
+          </p>
+          <p>
+            Por isso, no curso recomenda-se manter o True Peak abaixo de<strong>−1 dBTP</strong>.
+          </p>
+        </article>
+      </section>
+
+      <section
+        class="study-section"
+        id="processors-deep"
+        data-section
+        data-section-title="Processadores de áudio: análise aprofundada">
+        <header class="section-header">
+          <p class="section-kicker">Processamento de áudio</p>
+          <h2>Processadores de áudio: análise aprofundada</h2>
+        </header>
+
+        <div class="definition-grid" data-component="definition-grid">
+          <article class="definition-card" data-term="eq-deep">
+            <h3>EQ</h3>
+            <p>Altera o equilíbrio das frequências.</p>
+            <ul>
+              <li>Cut estreito para remover um problema.</li>
+              <li>Boost largo para uma alteração musical.</li>
+              <li>Q elevado = banda estreita.</li>
+              <li>Q baixo = banda larga.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="compressor-deep">
+            <h3>Compressor</h3>
+            <p>Reduz a gama dinâmica.</p>
+            <ul>
+              <li>Controla as partes mais altas.</li>
+              <li>Permite tornar o sinal mais uniforme.</li>
+              <li>Uma compressão excessiva pode aumentar o ruído e a sibilância.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="limiter-deep">
+            <h3>Limiter</h3>
+            <p>Impede o sinal de ultrapassar o máximo definido.</p>
+            <ul>
+              <li>É utilizado como proteção final.</li>
+              <li>Não deve substituir um gain staging correto.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="gate-deep">
+            <h3>Gate</h3>
+            <p>Fecha o sinal abaixo do Threshold.</p>
+            <ul>
+              <li>É útil nas pausas.</li>
+              <li>Não remove o ruído enquanto a pessoa fala.</li>
+              <li>Um Threshold demasiado alto corta palavras.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="saturation-deep">
+            <h3>Saturation</h3>
+            <p>Acrescenta suavemente harmónicos e densidade.</p>
+            <ul>
+              <li>Fita.</li>
+              <li>Válvulas.</li>
+              <li>Transformadores.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="distortion-deep">
+            <h3>Distortion</h3>
+            <p>Cria uma distorção mais agressiva.</p>
+            <ul>
+              <li>Guitarra elétrica.</li>
+              <li>Industrial.</li>
+              <li>Horror.</li>
+              <li>Sound design expressivo.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="reverb-deep">
+            <h3>Reverb</h3>
+            <p>Cria reflexões e uma sensação de espaço.</p>
+            <ul>
+              <li>Sala.</li>
+              <li>Auditório.</li>
+              <li>Igreja.</li>
+              <li>Gruta.</li>
+            </ul>
+          </article>
+
+          <article class="definition-card" data-term="delay-deep">
+            <h3>Delay</h3>
+            <p>Cria repetições distintas do sinal.</p>
+            <ul>
+              <li>Eco.</li>
+              <li>Repetições rítmicas.</li>
+              <li>Profundidade adicional.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="responsive-table" data-component="table-wrapper">
+          <table class="study-table">
+            <caption>O que cada processador altera diretamente</caption>
+            <thead>
+              <tr>
+                <th scope="col">Processador</th>
+                <th scope="col">Área principal de atuação</th>
+                <th scope="col">Erro típico</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>EQ</td>
+                <td>Frequências</td>
+                <td>Cut demasiado largo ou boost demasiado estreito</td>
+              </tr>
+              <tr>
+                <td>Compressor</td>
+                <td>Dinâmica</td>
+                <td>Compressão excessiva</td>
+              </tr>
+              <tr>
+                <td>Limiter</td>
+                <td>Picos máximos</td>
+                <td>Tentar corrigir uma má mistura apenas com o limiter</td>
+              </tr>
+              <tr>
+                <td>Gate</td>
+                <td>Sinal abaixo do limiar</td>
+                <td>Cortar o início e o fim das palavras</td>
+              </tr>
+              <tr>
+                <td>Reverb</td>
+                <td>Espaço</td>
+                <td>Perda de inteligibilidade devido ao excesso de reflexões</td>
+              </tr>
+              <tr>
+                <td>Delay</td>
+                <td>Repetições temporais</td>
+                <td>Mistura sobrecarregada com repetições</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="exam-note" data-note-type="important">
+          <h3>Cadeia didática</h3>
+          <p>
+            Signal → EQ → Compressor → Saturation → Reverb / Delay → Limiter → Delivery. O
+            Gate é normalmente colocado mais cedo quando é necessário limpar as pausas de uma pista de voz.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="reaper-practice"
+        data-section
+        data-section-title="Prática no Reaper">
+        <header class="section-header">
+          <p class="section-kicker">Aplicação prática</p>
+          <h2>Operações práticas no Reaper</h2>
+        </header>
+
+        <article class="definition-card" data-term="project-setup">
+          <h3>Configuração do projeto para vídeo</h3>
+          <ol>
+            <li>Abrir as definições do projeto.</li>
+            <li>Definir o Sample Rate para 48 000 Hz.</li>
+            <li>Verificar o formato de gravação e exportação.</li>
+            <li>Controlar os níveis das pistas individuais.</li>
+            <li>Manter headroom no Master.</li>
+          </ol>
+        </article>
+
+        <div class="comparison-grid" data-component="comparison">
+          <article class="comparison-card" data-compare="volume-envelope">
+            <h3>Volume Envelope</h3>
+            <ul>
+              <li>Fade In.</li>
+              <li>Fade Out.</li>
+              <li>Ducking da música sob a voz.</li>
+              <li>Correção manual precisa de frases individuais.</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card" data-compare="pan-envelope">
+            <h3>Pan Envelope</h3>
+            <ul>
+              <li>Movimento da esquerda para a direita.</li>
+              <li>Acompanhar um objeto no enquadramento.</li>
+              <li>Criação de uma sensação espacial.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="definition-card" data-term="time-stretch-workflow">
+          <h3>Time-stretch: dois métodos</h3>
+          <ol>
+            <li>
+              <strong>Alt + arrastar a extremidade do clip:</strong>
+              método rápido para estender ou comprimir o Item.
+            </li>
+            <li>
+              <strong>F2 → Item Properties → Playback Rate:</strong>
+              método preciso para definir a velocidade.
+            </li>
+          </ol>
+          <p>
+            Um Playback Rate inferior a 1 abranda;
+            superior a 1
+            acelera. Preserve Pitch mantém a altura.
+          </p>
+        </article>
+
+        <article class="definition-card" data-term="pitch-workflow">
+          <h3>Pitch Shift: dois métodos</h3>
+          <ol>
+            <li><strong>F2 → Pitch Adjust</strong> — alteração em semitons.</li>
+            <li><strong>ReaPitch</strong> — controlo mais preciso de semitones, cents e formant.</li>
+          </ol>
+          <ul>
+            <li>+12 semitones = uma oitava acima.</li>
+            <li>−12 semitones = uma oitava abaixo.</li>
+            <li>O Formant ajuda a preservar a coloração natural da voz.</li>
+          </ul>
+        </article>
+
+        <article class="definition-card" data-term="gate-workflow">
+          <h3>Gate para uma pista de voz</h3>
+          <ol>
+            <li>Adicionar o TAL-Filter.</li>
+            <li>Selecionar o modo Envelope Follower ou Gate.</li>
+            <li>Ajustar o Threshold para que o Gate feche apenas nas pausas.</li>
+            <li>Definir o Attack para aproximadamente 5–10 ms.</li>
+            <li>Definir o Release para aproximadamente 50–100 ms.</li>
+            <li>Verificar se o início ou o fim das palavras não desaparece.</li>
+          </ol>
+        </article>
+
+        <aside class="exam-note" data-note-type="warning">
+          <h3>O que o Gate não consegue fazer</h3>
+          <p>
+            O Gate não remove o ruído que soa ao mesmo tempo que
+            a voz. Limpa apenas as zonas abaixo do Threshold, normalmente as pausas.
+          </p>
+        </aside>
+      </section>
+
+      <section
+        class="study-section"
+        id="exam-scenarios"
+        data-section
+        data-section-title="Situações de exame">
+        <header class="section-header">
+          <p class="section-kicker">Aplicação dos conceitos</p>
+          <h2>Situações típicas de exame</h2>
+        </header>
+
+        <div class="accordion" data-component="accordion" data-accordion-group="exam-scenarios">
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="scenario-1"
+                id="scenario-trigger-1"
+                data-action="toggle-accordion">
+                Situação 1: ouve-se o ar condicionado nas pausas
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="scenario-1"
+              role="region"
+              aria-labelledby="scenario-trigger-1"
+              hidden>
+              <p><strong>Problema:</strong> Ruído de Fundo.</p>
+              <p><strong>Solução possível:</strong> Gate para limpar as pausas.</p>
+              <p><strong>Limitação:</strong> o Gate não remove o ruído que está por baixo da voz.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="scenario-2"
+                id="scenario-trigger-2"
+                data-action="toggle-accordion">
+                Situação 2: os picos ficaram planos a 0 dBFS
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="scenario-2"
+              role="region"
+              aria-labelledby="scenario-trigger-2"
+              hidden>
+              <p><strong>Problema:</strong> clipping digital.</p>
+              <p><strong>Consequência:</strong> a informação foi destruída.</p>
+              <p><strong>Ação correta:</strong> voltar a gravar se o defeito for crítico.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="scenario-3"
+                id="scenario-trigger-3"
+                data-action="toggle-accordion">
+                Situação 3: S e Ch agressivos
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="scenario-3"
+              role="region"
+              aria-labelledby="scenario-trigger-3"
+              hidden>
+              <p><strong>Problema:</strong> Sibilância.</p>
+              <p><strong>Zona de frequências:</strong> normalmente 5–10 kHz.</p>
+              <p><strong>Solução:</strong> De-esser ou correção precisa com EQ.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="scenario-4"
+                id="scenario-trigger-4"
+                data-action="toggle-accordion">
+                Situação 4: a voz não se ouve por causa do ruído de um autocarro
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="scenario-4"
+              role="region"
+              aria-labelledby="scenario-trigger-4"
+              hidden>
+              <p><strong>Fenómeno:</strong> Mascaramento.</p>
+              <p><strong>Tipo:</strong> fenómeno psicoacústico, e não uma avaria do equipamento.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="scenario-5"
+                id="scenario-trigger-5"
+                data-action="toggle-accordion">
+                Situação 5: a música continua tranquilamente durante uma tragédia
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="scenario-5"
+              role="region"
+              aria-labelledby="scenario-trigger-5"
+              hidden>
+              <p><strong>Tipo de som:</strong> Anempático.</p>
+              <p><strong>Efeito:</strong> a indiferença da música pode intensificar o drama.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="scenario-6"
+                id="scenario-trigger-6"
+                data-action="toggle-accordion">
+                Situação 6: é necessário tornar a chuva mais longa sem alterar a altura
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="scenario-6"
+              role="region"
+              aria-labelledby="scenario-trigger-6"
+              hidden>
+              <p><strong>Operação:</strong> Time-stretch.</p>
+              <p><strong>No Reaper:</strong> Alt + extremidade do clip ou Playback Rate com Preserve Pitch.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="scenario-7"
+                id="scenario-trigger-7"
+                data-action="toggle-accordion">
+                Situação 7: é necessário tornar a voz mais grave mantendo a duração
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="scenario-7"
+              role="region"
+              aria-labelledby="scenario-trigger-7"
+              hidden>
+              <p><strong>Operação:</strong> Pitch-shifting.</p>
+              <p><strong>Ferramenta:</strong> Pitch Adjust ou ReaPitch.</p>
+            </div>
+          </article>
+
+          <article class="accordion-item" data-accordion-item>
+            <h3>
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="scenario-8"
+                id="scenario-trigger-8"
+                data-action="toggle-accordion">
+                Situação 8: o som é utilizável, mas tem algum ruído ligeiro e reverberação
+              </button>
+            </h3>
+            <div
+              class="accordion-panel"
+              id="scenario-8"
+              role="region"
+              aria-labelledby="scenario-trigger-8"
+              hidden>
+              <p><strong>Categoria de qualidade:</strong> Colored.</p>
+              <p><strong>Porquê:</strong> o sinal continua inteligível e pode ser processado.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="terminology-glossary"
+        data-section
+        data-section-title="Glossário de termos">
+        <header class="section-header">
+          <p class="section-kicker">Glossário</p>
+          <h2>Glossário dos principais termos</h2>
+        </header>
+
+        <div class="responsive-table" data-component="table-wrapper">
+          <table class="study-table">
+            <caption>Termos portugueses e ingleses do curso</caption>
+            <thead>
+              <tr>
+                <th scope="col">Termo</th>
+                <th scope="col">Tradução</th>
+                <th scope="col">Definição breve</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Ouvir</td><td>Ouvir</td><td>Perceção fisiológica passiva</td></tr>
+              <tr><td>Escutar</td><td>Escutar</td><td>Atenção ativa e interpretação</td></tr>
+              <tr><td>Escuta Causal</td><td>Escuta causal</td><td>Identificação da fonte</td></tr>
+              <tr><td>Escuta Semântica</td><td>Escuta semântica</td><td>Identificação do significado</td></tr>
+              <tr><td>Escuta Reduzida</td><td>Escuta reduzida</td><td>Análise das propriedades do som</td></tr>
+              <tr><td>Som Empático</td><td>Som empático</td><td>Apoia a emoção da cena</td></tr>
+              <tr><td>Som Anempático</td><td>Som anempático</td><td>É indiferente à emoção da cena</td></tr>
+              <tr><td>Amplitude</td><td>Amplitude</td><td>Relacionada com o nível e o volume</td></tr>
+              <tr><td>Frequência</td><td>Frequência</td><td>Determina a altura do som</td></tr>
+              <tr><td>Timbre</td><td>Timbre</td><td>Coloração única do som</td></tr>
+              <tr><td>Duração</td><td>Duração</td><td>Tempo de existência do som</td></tr>
+              <tr><td>Waveform</td><td>Forma de onda temporal</td><td>Amplitude ao longo do tempo</td></tr>
+              <tr><td>Spectrogram</td><td>Espectrograma</td><td>Frequências ao longo do tempo</td></tr>
+              <tr><td>Transient</td><td>Transiente</td><td>Impulso inicial curto</td></tr>
+              <tr><td>Headroom</td><td>Margem de nível</td><td>Distância até 0 dBFS</td></tr>
+              <tr><td>Clipping</td><td>Clipping</td><td>Corte dos picos devido a sobrecarga</td></tr>
+              <tr><td>Sibilância</td><td>Sibilância</td><td>S e Ch agressivos, normalmente entre 5 e 10 kHz</td></tr>
+              <tr><td>Mascaramento</td><td>Mascaramento</td><td>Um som alto esconde um som baixo</td></tr>
+              <tr><td>Sample Rate</td><td>Frequência de amostragem</td><td>Número de amostras por segundo</td></tr>
+              <tr><td>dBFS</td><td>Decibéis digitais</td><td>Nível relativamente ao máximo digital</td></tr>
+              <tr><td>LUFS</td><td>Unidades de loudness</td><td>Volume médio percecionado</td></tr>
+              <tr><td>True Peak</td><td>Pico verdadeiro</td><td>Estimativa do máximo após a conversão</td></tr>
+              <tr><td>LRA</td><td>Gama de loudness</td><td>Diferença entre as partes mais baixas e mais altas</td></tr>
+              <tr><td>Threshold</td><td>Limiar</td><td>Nível de atuação do processador</td></tr>
+              <tr><td>Attack</td><td>Ataque</td><td>Velocidade de início da ação</td></tr>
+              <tr><td>Release</td><td>Release</td><td>Velocidade de fim da ação</td></tr>
+              <tr><td>Q</td><td>Fator Q</td><td>Largura da banda do EQ</td></tr>
+              <tr><td>Time-stretch</td><td>Alongamento temporal</td><td>Altera a duração</td></tr>
+              <tr><td>Pitch-shift</td><td>Alteração da altura</td><td>Altera o pitch sem alterar a duração</td></tr>
+              <tr><td>Formant</td><td>Formante</td><td>Coloração espectral da voz</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section
+        class="study-section"
+        id="exam-cheatsheet"
+        data-section
+        data-section-title="Cábula para o exame">
+        <header class="section-header">
+          <p class="section-kicker">O mínimo que é necessário saber</p>
+          <h2>Diferenças e números essenciais</h2>
+        </header>
+
+        <div class="cheatsheet-grid" data-component="cheatsheet">
+          <article class="cheatsheet-card">
+            <h3>Perceção</h3>
+            <ul>
+              <li>Ouvir — perceção passiva.</li>
+              <li>Escutar — escuta ativa.</li>
+              <li>Causal — fonte.</li>
+              <li>Semantic — significado.</li>
+              <li>Reduced — propriedades do som.</li>
+            </ul>
+          </article>
+
+          <article class="cheatsheet-card">
+            <h3>Áudio digital</h3>
+            <ul>
+              <li>44,1 kHz — música.</li>
+              <li>48 kHz — vídeo.</li>
+              <li>0 dBFS — máximo.</li>
+              <li>−18…−12 dBFS — zona de trabalho.</li>
+              <li>True Peak abaixo de −1 dBTP.</li>
+            </ul>
+          </article>
+
+          <article class="cheatsheet-card">
+            <h3>Processamento</h3>
+            <ul>
+              <li>EQ — frequências.</li>
+              <li>Compressor — dinâmica.</li>
+              <li>Limiter — nível máximo.</li>
+              <li>Gate — ruído nas pausas.</li>
+              <li>Reverb — espaço.</li>
+              <li>Delay — eco.</li>
+            </ul>
+          </article>
+
+          <article class="cheatsheet-card">
+            <h3>Números muito importantes</h3>
+            <ul>
+              <li>+6 dB = duplicação da amplitude.</li>
+              <li>+10 dB ≈ volume subjetivamente duas vezes maior.</li>
+              <li>Sibilance: 5–10 kHz.</li>
+              <li>Gate Attack: 5–10 ms.</li>
+              <li>Gate Release: 50–100 ms.</li>
+              <li>+12 semitones = uma oitava acima.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="study-section quiz-section"
+        id="quiz-panel"
+        data-section
+        data-section-title="Teste de treino"
+        data-component="quiz">
+        <header class="section-header">
+          <p class="section-kicker">Autoavaliação</p>
+          <h2>Teste de treino</h2>
+          <p>O teste utiliza os atributos data-correct-answer e está preparado para verificação automática através de JavaScript.</p>
+        </header>
+
+        <form class="quiz-form" data-quiz-form>
+          <fieldset class="quiz-question" data-question-id="q1" data-correct-answer="c">
+            <legend>1. O que é analisado na reduced listening?</legend>
+            <label><input type="radio" name="q1" value="a"> Fonte do som</label>
+            <label><input type="radio" name="q1" value="b"> Significado da mensagem</label>
+            <label><input type="radio" name="q1" value="c"> Propriedades físicas do som</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q2" data-correct-answer="b">
+            <legend>2. Qual é a zona considerada adequada para gravação e mistura?</legend>
+            <label><input type="radio" name="q2" value="a"> −6…0 dBFS</label>
+            <label><input type="radio" name="q2" value="b"> −18…−12 dBFS</label>
+            <label><input type="radio" name="q2" value="c"> Abaixo de −40 dBFS</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q3" data-correct-answer="a">
+            <legend>3. Quem recria passos e o movimento da roupa?</legend>
+            <label><input type="radio" name="q3" value="a"> Foley Artist</label>
+            <label><input type="radio" name="q3" value="b"> Composer</label>
+            <label><input type="radio" name="q3" value="c"> Re-recording Mixer</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q4" data-correct-answer="c">
+            <legend>4. O que altera o pitch-shifting?</legend>
+            <label><input type="radio" name="q4" value="a"> Apenas a duração</label>
+            <label><input type="radio" name="q4" value="b"> Apenas o volume</label>
+            <label><input type="radio" name="q4" value="c"> A altura sem alterar a duração</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q5" data-correct-answer="b">
+            <legend>5. Que indicador mede o volume médio de todo o programa?</legend>
+            <label><input type="radio" name="q5" value="a"> Short-Term LUFS</label>
+            <label><input type="radio" name="q5" value="b"> Integrated LUFS</label>
+            <label><input type="radio" name="q5" value="c"> Q</label>
+          </fieldset>
+
+
+          <fieldset class="quiz-question" data-question-id="q6" data-correct-answer="a">
+            <legend>6. Que tipo de som é indiferente ao drama emocional da cena?</legend>
+            <label><input type="radio" name="q6" value="a"> Anempático</label>
+            <label><input type="radio" name="q6" value="b"> Empático</label>
+            <label><input type="radio" name="q6" value="c"> Semantic</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q7" data-correct-answer="b">
+            <legend>7. O que mostra uma waveform?</legend>
+            <label><input type="radio" name="q7" value="a"> Frequências ao longo do tempo</label>
+            <label><input type="radio" name="q7" value="b"> Amplitude ao longo do tempo</label>
+            <label><input type="radio" name="q7" value="c"> Apenas LUFS</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q8" data-correct-answer="c">
+            <legend>8. Qual é o Sample Rate normalizado para vídeo?</legend>
+            <label><input type="radio" name="q8" value="a"> 22,05 kHz</label>
+            <label><input type="radio" name="q8" value="b"> 44,1 kHz</label>
+            <label><input type="radio" name="q8" value="c"> 48 kHz</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q9" data-correct-answer="a">
+            <legend>9. O que significa um Q elevado no EQ?</legend>
+            <label><input type="radio" name="q9" value="a"> Uma banda estreita</label>
+            <label><input type="radio" name="q9" value="b"> Uma banda larga</label>
+            <label><input type="radio" name="q9" value="c"> Volume elevado</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q10" data-correct-answer="b">
+            <legend>10. Que processador limpa as pausas abaixo de um Threshold definido?</legend>
+            <label><input type="radio" name="q10" value="a"> Reverb</label>
+            <label><input type="radio" name="q10" value="b"> Gate</label>
+            <label><input type="radio" name="q10" value="c"> Delay</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q11" data-correct-answer="c">
+            <legend>11. Em que zona se encontra normalmente a sibilância?</legend>
+            <label><input type="radio" name="q11" value="a"> 20–80 Hz</label>
+            <label><input type="radio" name="q11" value="b"> 500–900 Hz</label>
+            <label><input type="radio" name="q11" value="c"> 5–10 kHz</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q12" data-correct-answer="a">
+            <legend>12. O que mostra o Integrated LUFS?</legend>
+            <label><input type="radio" name="q12" value="a"> O volume médio de todo o programa</label>
+            <label><input type="radio" name="q12" value="b"> A frequência do pico mais alto</label>
+            <label><input type="radio" name="q12" value="c"> A largura da banda do EQ</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q13" data-correct-answer="b">
+            <legend>13. Que limite de True Peak é recomendado no material?</legend>
+            <label><input type="radio" name="q13" value="a"> Acima de 0 dBTP</label>
+            <label><input type="radio" name="q13" value="b"> Abaixo de −1 dBTP</label>
+            <label><input type="radio" name="q13" value="c"> Exatamente −24 dBTP</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q14" data-correct-answer="c">
+            <legend>14. Quem combina diálogos, música, Foley e efeitos?</legend>
+            <label><input type="radio" name="q14" value="a"> Composer</label>
+            <label><input type="radio" name="q14" value="b"> ADR Editor</label>
+            <label><input type="radio" name="q14" value="c"> Re-recording Mixer</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-question-id="q15" data-correct-answer="a">
+            <legend>15. Como se chama a margem entre o nível do sinal e 0 dBFS?</legend>
+            <label><input type="radio" name="q15" value="a"> Headroom</label>
+            <label><input type="radio" name="q15" value="b"> Timbre</label>
+            <label><input type="radio" name="q15" value="c"> LRA</label>
+          </fieldset>
+
+          <div class="quiz-actions">
+            <button class="button button--primary" type="submit" data-action="submit-quiz">Verificar</button>
+            <button class="button button--secondary" type="reset" data-action="reset-quiz">Repor</button>
+          </div>
+
+          <output class="quiz-result" data-quiz-result aria-live="polite"></output>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-component="site-footer">
+      <p>Site de estudo baseado nos conteúdos do curso de som e pós-produção áudio.</p>
+      <p>O HTML está preparado para a posterior ligação de CSS e JavaScript.</p>
+    </footer>
+  </div>
+
+  <div class="backdrop" data-component="backdrop" data-action="close-sidebar" hidden></div>
+
+  <template id="search-result-template">
+    <article class="search-result" data-search-result>
+      <h3 class="search-result__title"></h3>
+      <p class="search-result__excerpt"></p>
+      <a class="search-result__link" href="#">Ir para a secção</a>
+    </article>
+  </template>
+
+  <template id="toast-template">
+    <div class="toast" role="status" aria-live="polite" data-toast>
+      <p class="toast__message"></p>
+      <button class="toast__close" type="button" data-action="close-toast" aria-label="Fechar a notificação">×</button>
+    </div>
+  </template>
+  <button
+    class="scroll-top"
+    type="button"
+    data-action="scroll-top"
+    aria-label="Voltar ao topo"
+    hidden>
+    ↑
+  </button>
+
+</body>
+</html>
